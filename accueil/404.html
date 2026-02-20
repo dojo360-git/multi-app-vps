@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cœur d’Essonne – Accès</title>
+  <meta name="description" content="Accès rapide à la régie et au planning." />
+
+  <style>
+    :root{
+      /* Palette inspirée de l'identité visuelle Cœur d’Essonne (bleu/vert + vert anis) */
+      --brand-1:#0B83A6;   /* bleu/vert */
+      --brand-2:#B7D63A;   /* vert anis */
+      --ink:#0E2A33;
+      --muted:#5C6B73;
+      --bg:#F5F7F9;
+      --card:#FFFFFF;
+      --ring: rgba(11, 131, 166, .35);
+      --shadow: 0 12px 32px rgba(15, 30, 38, .10);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(900px 450px at 15% 15%, rgba(183, 214, 58, .22), transparent 55%),
+        radial-gradient(900px 450px at 85% 30%, rgba(11, 131, 166, .18), transparent 55%),
+        var(--bg);
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    .wrap{
+      width:min(680px, 100%);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      border:1px solid rgba(14, 42, 51, .06);
+    }
+
+    header{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .mark{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(183, 214, 58, .95), rgba(183, 214, 58, .2) 55%, transparent 56%),
+        linear-gradient(135deg, rgba(11, 131, 166, 1), rgba(11, 131, 166, .7));
+      box-shadow: 0 10px 20px rgba(11, 131, 166, .18);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute;
+      inset:-20px;
+      background: conic-gradient(from 210deg, transparent 0 35%, rgba(255,255,255,.25) 35% 45%, transparent 45% 100%);
+      transform: rotate(12deg);
+    }
+
+    h1{
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height:1.15;
+      margin:0;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .actions{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+      margin-top:18px;
+    }
+    @media (min-width: 520px){
+      .actions{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn{
+      appearance:none;
+      border:0;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:16px 16px;
+      border-radius:16px;
+      font-weight:700;
+      letter-spacing:.2px;
+      background: linear-gradient(135deg, var(--brand-1), rgba(11, 131, 166, .78));
+      color:white;
+      box-shadow: 0 10px 20px rgba(11, 131, 166, .18);
+      transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+      outline:none;
+    }
+
+    .btn.secondary{
+      background: linear-gradient(135deg, rgba(11, 131, 166, .12), rgba(183, 214, 58, .18));
+      color:var(--ink);
+      border:1px solid rgba(11, 131, 166, .18);
+      box-shadow: 0 10px 20px rgba(15, 30, 38, .06);
+    }
+
+    .btn:hover{ transform: translateY(-1px); filter:saturate(1.05); }
+    .btn:active{ transform: translateY(0px); filter:saturate(1); }
+
+    .btn:focus-visible{
+      box-shadow: 0 0 0 4px var(--ring), var(--shadow);
+    }
+
+    .chev{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background: rgba(255,255,255,.18);
+    }
+    .secondary .chev{
+      background: rgba(11, 131, 166, .10);
+      border: 1px solid rgba(11, 131, 166, .12);
+    }
+
+    footer{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+    footer a{ color:var(--brand-1); text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Accès rapide">
+      <header>
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Erreur 404</h1>
+          <p class="subtitle"></p>
+        </div>
+      </header>
+
+      <footer>
+        <span>© Cœur d’Essonne Agglomération</span>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

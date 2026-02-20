@@ -1,0 +1,17 @@
+services:
+  reverse_proxy:
+    image: nginx:1.27-alpine
+    container_name: reverse_proxy
+    ports:
+      - "80:80"
+      - "81:81"
+    volumes:
+      - ./docker/network/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./accueil/404.html:/usr/share/nginx/errors/404.html:ro
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    name: app_net
+    driver: bridge
